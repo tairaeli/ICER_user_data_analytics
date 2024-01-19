@@ -1,0 +1,11 @@
+name: CMSE802_Project_Template
+channels:
+  - defaults
+dependencies:
+  - pdoc3
+  - pip
+  - pytest
+  - pydocstyle
+  - pylint
+prefix: ./envs
+
