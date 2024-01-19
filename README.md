@@ -3,6 +3,6 @@
 Team Members:
 - Shams Al khalidy
 - Richard Arbury
-- Wesley Casalet
+- Wesley Casaletto
 - Luke Kozlowski
 - Elias Taira
