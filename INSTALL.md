@@ -13,14 +13,16 @@ This document provides instructions for setting up the environment, installing n
 1. Open a terminal or command prompt.
 
 2. Clone the project repository using the following command:
-
-sh
+   
+```bash
 git clone https://github.com/tairaeli/ICER_user_data_analytics.git
+```
 
 3. Navigate into the project directory:
 
-sh
+```bash
 cd ICER_user_data_analytics
+```
 
 **Data Instructions**
 
@@ -30,32 +32,40 @@ cd ICER_user_data_analytics
 
 1. Create a new conda environment specific to this project:
 
-sh 
+```bash
 conda create --prefix ./envs pandas numpy scikit-learn matplotlib seaborn dask
+```
+
 
 2. Activate the newly created environment:
 
-sh
+```bash
 conda activate ./envs
+```
 
 **Additional Package Installation**
 
 If any additional packages are required, install them using conda install or pip install commands within the activated environment. For example:
 
-sh
+```bash
 conda install -c conda-forge jupyterlab
+```
+
 
 **Running the Demo**
 
 1. Start JupyterLab or Jupyter Notebook:
-
-sh
+   
+```bash
 jupyter lab
+```
+
 
 Or:
 
-sh
+```bash
 jupyter notebook
+```
 
 2. Open the demo notebook file (demo.ipynb) located in the main project directory. This notebook contains example code demonstrating the use of the software, including data preprocessing, analysis, and visualization techniques.
 
@@ -64,20 +74,23 @@ jupyter notebook
 
 - To deactivate the conda environment:
 
-sh
+```bash
 conda deactivate
+```
 
 - To remove the environment if no longer needed:
   
-sh
+```bash
 rm -rf ./envs
+```
 
 **Troubleshooting**
 
 - If you encounter any issues related to UTF8 errors on Windows, run the following command in your git repository directory to ensure the correct encoding:
 
-sh
+```bash
 conda env export --from-history | Set-Content -Encoding utf8 environment.yml
+```
 
 **Support**
 
