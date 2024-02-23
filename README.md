@@ -10,6 +10,12 @@ Leveraging the SLURM job database and GPFS file metadata, this project focuses o
 
 Project plan video: https://michiganstate.sharepoint.com/:v:/s/Section_SS24-CMSE-495-001-224214134-EL-32-A26-ICER/Efp8_UgZhPlOmn8TDa3YKNEB73NHpUl5yw95KQl-N27r3A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=MrIMiT
 
+## Files
+
+- For detailed installation instructions, please see our [INSTALL.md](INSTALL.md) file.
+
+- For a step-by-step guide on how to use our software, please refer to our [DEMO.md](DEMO.md) file.
+
 ## Division of Labor
 
 Our team is divided to tackle multiple research questions simultaneously, ensuring efficient project progression. The prioritization of these questions is dynamic and may evolve as the project advances. Key research areas include:
