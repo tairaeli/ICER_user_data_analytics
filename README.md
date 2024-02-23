@@ -47,8 +47,8 @@ Acknowledgments
 ICER for providing the infrastructure and datasets for this research.
 All team members and contributors who have dedicated their time and expertise to this project.
 
-Team Members:
-- Shams Al khalidy
+Team Members & Contact Info:
+- Shams Al khalidy        alkhali7@msu.edu
 - Richard Arbury
 - Wesley Casaletto
 - Luke Kozlowski
