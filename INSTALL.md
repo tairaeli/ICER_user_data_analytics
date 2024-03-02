@@ -24,33 +24,31 @@ git clone https://github.com/tairaeli/ICER_user_data_analytics.git
 cd ICER_user_data_analytics
 ```
 
+**Dependencies**
+
+Once in the package directory, there are several methods to ensure that all of the depedencies are installed properly on your device:
+
+1. Using Conda 
+
+If you are a conda user, you can use the following code in the project's main directory
+
+```bash
+conda env create --file ./environment.yml
+conda activate user_dat_analysis
+```
+
+2. Manual Installation
+
+This project uses mostly relies on many popular, well-maintained packages, so a manual installation is quite simple. All you need to do is to make sure all of the following packages are installed:
+- numpy
+- scikit-learn
+- matplotlib
+- pandas
+- seaborn
+
 **Data Instructions**
 
-- Since the project does not include large datasets in the repository, please follow the instructions provided by the project team or instructors to obtain the necessary data. Place this data in the data directory located at the root of the project repository. Use relative paths in your code to access this data to ensure portability.
-
-**Setting Up the Environment**
-
-1. Create a new conda environment specific to this project:
-
-```bash
-conda create --prefix ./envs pandas numpy scikit-learn matplotlib seaborn dask
-```
-
-
-2. Activate the newly created environment:
-
-```bash
-conda activate ./envs
-```
-
-**Additional Package Installation**
-
-If any additional packages are required, install them using conda install or pip install commands within the activated environment. For example:
-
-```bash
-conda install -c conda-forge jupyterlab
-```
-
+Since the project does not include large datasets in the repository, please follow the instructions provided by the project team or instructors to obtain the necessary data. Place this data in the data directory located at the root of the project repository. Use relative paths in your code to access this data to ensure portability.
 
 **Running the Demo**
 
@@ -68,21 +66,6 @@ jupyter notebook
 ```
 
 2. Open the demo notebook file (demo.ipynb) located in the main project directory. This notebook contains example code demonstrating the use of the software, including data preprocessing, analysis, and visualization techniques.
-
-
-**Deactivating and Removing the Environment (Optional)**
-
-- To deactivate the conda environment:
-
-```bash
-conda deactivate
-```
-
-- To remove the environment if no longer needed:
-  
-```bash
-rm -rf ./envs
-```
 
 **Troubleshooting**
 
