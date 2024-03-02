@@ -15,7 +15,7 @@ Project plan video: [Project Plan Video](https://michiganstate.sharepoint.com/:v
 
 - For detailed installation instructions, please see our [INSTALL.md](INSTALL.md) file.
 
-- For a step-by-step guide on how to use our software, please refer to our [DEMO.md](DEMO.md) file.
+- For a step-by-step guide on how to use our software, please refer to our [demo.ipynb](demo.ipynb) file.
 
 ## Division of Labor
 
