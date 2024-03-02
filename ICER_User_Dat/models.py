@@ -31,13 +31,20 @@ def UsersWithManyFiles(data, file_limit):
     
 
 def FindUnterutilizerSLURM(data, thresholds):
+    """
+    Finds user who are requesting more resources than they use
+    """
 
     return None
 
-def GroupUsersSLURM(data, num_groups):
-
+def GroupUsersSLURM(data, ngroups):
+    """
+    Groups users based on their utilization patterns of the HPCC
+    """
     return None
 
 def PredWalltimeSLURM(data):
-
+    """
+    Predicts how long a given job will sit in queue before running
+    """
     return None
