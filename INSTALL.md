@@ -6,7 +6,7 @@ This document provides instructions for setting up the environment, installing n
 
 - Ensure you have git installed on your system to clone the repository.
 
-- Download and install [Miniconda](https://docs.anaconda.com/free/miniconda/). for your operating system from the Miniconda website. This will be used to manage the project's environment and dependencies.
+- Download and install [Miniconda](https://docs.anaconda.com/free/miniconda/) or [Anaconda](https://www.anaconda.com/download). for your operating system from the Anaconda website. This will be used to manage the project's environment and dependencies.
 
 **Cloning the Repository**
 
