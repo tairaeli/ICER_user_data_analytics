@@ -48,3 +48,55 @@ def PredWalltimeSLURM(data):
     Predicts how long a given job will sit in queue before running
     """
     return None
+
+def CleanSLURMDat(dat):
+    '''
+    Aggregates all submitted jobs together, removing all batch/extern 
+    jobs and including said information into a single job. Excludes
+    jobs that do not have a clear '.batch' and '.extern' files
+
+    args:
+
+        dat - the slurm dataset 
+    
+    returns:
+
+        out_df - the aggregated version of the slurm dataset
+    '''
+    
+    job_list = dat["JobID"].value_counts().index
+
+    out_df = pd.DataFrame(columns=dat.keys())
+
+    for job in job_list:
+
+        jdat = dat[dat["JobID"] == job]
+
+        cpu_time_list = jdat["CPUTimeRAW"].value_counts()
+        cpu_time_list = cpu_time_list[cpu_time_list == 2].index
+
+        for cpu_time in cpu_time_list:
+
+            ajob = jdat[jdat["CPUTimeRAW"] == cpu_time]
+
+            batch_job = ajob[ajob["User"] == "user_258"]
+
+            ag_job = ajob[ajob["User"] != "user_258"]
+
+            if len(ag_job["User"]) == 0:
+                print("Weird Job",ajob["JobID"])
+                print("No aggregate job")
+                continue
+            
+            if len(ag_job["User"]) == 2:
+                print("Weird Job",ajob["JobID"])
+                print("2 copies of aggregate job")
+                continue
+
+            assert len(ag_job["User"]) == 1, "New edge case discovered!"
+
+            ag_job.loc[ag_job.index[0],"MaxRSS"] = batch_job["MaxRSS"].values[0]
+
+            out_df = pd.concat([out_df,ag_job])
+
+    return out_df
