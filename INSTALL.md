@@ -53,11 +53,12 @@ Since the project does not include large datasets in the repository, please foll
 **Running the Demo**
 
 1. Start JupyterLab or Jupyter Notebook:
-   
+
+This can be done by any way you are comfortable with. So long as you are able to open a working Jupyter notebook th
+
 ```bash
 jupyter lab
 ```
-
 
 Or:
 
@@ -65,7 +66,7 @@ Or:
 jupyter notebook
 ```
 
-2. Open the demo notebook file (demo.ipynb) located in the main project directory. This notebook contains example code demonstrating the use of the software, including data preprocessing, analysis, and visualization techniques.
+2. Once the jupyter notebook session is created, open the demo notebook file (demo.ipynb) located in the main project directory. This notebook contains example code demonstrating the use of the software, including data preprocessing, analysis, and visualization techniques.
 
 **Troubleshooting**
 
