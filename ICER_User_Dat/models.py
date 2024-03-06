@@ -49,7 +49,7 @@ def PredWalltimeSLURM(data):
     """
     return None
 
-def CleanSLURMDat(dat):
+def AggSLURMDat(dat):
     '''
     Aggregates all submitted jobs together, removing all batch/extern 
     jobs and including said information into a single job. Excludes
