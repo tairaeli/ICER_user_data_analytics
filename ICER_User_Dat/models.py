@@ -33,6 +33,44 @@ def UsersWithManyFiles(data, file_limit):
 
     return file_count_per_user[file_count_per_user.sort_values()>file_limit]
     
+##
+def FindUnterutilizerGPFS(data, threshold):
+    """
+    Identifies and returns entries for files where the actual utilization is significantly 
+    lower than the allocated resources, based on a given threshold. This helps in identifying 
+    inefficient resource usage in GPFS (General Parallel File System).
+
+    The function calculates the underutilization by subtracting the kilobytes allocated 
+    for each file (adjusted by a fixed overhead of 3000 KB to bytes) from the file size in bytes. 
+    It then filters and returns the entries where this underutilized value exceeds a specified threshold.
+
+    Parameters:
+        data (pd.DataFrame): A pandas DataFrame containing the dataset with at least 
+                             'File Size' and 'KB Allocated' columns. 'File Size' should be in bytes,
+                             and 'KB Allocated' should be in kilobytes.
+        threshold (int or float): A numeric threshold for the 'underutilized (Bytes)' value. Entries with
+                                  underutilization greater than this threshold will be returned.
+
+    Returns:
+        pd.DataFrame: A DataFrame containing the rows from the input DataFrame where the underutilization
+                      (calculated as 'File Size' in bytes minus 'KB Allocated' in bytes, including a fixed
+                      overhead) exceeds the specified threshold.
+
+    Note:
+        - The function adds a fixed overhead of 3000 KB to the 'KB Allocated' before conversion and 
+          calculation to account for system or operational reserves that might not be reflected 
+          in the raw 'KB Allocated' values.
+        - Ensure that the input DataFrame contains the necessary columns with appropriate units 
+          as described.
+    """
+    
+    # Conversion of KB Allocated to bytes and adjustment for overhead, then calculation of underutilized space
+    data["underutilized (Bytes)"] = data['File Size'] - (data['KB Allocated'] * 1000 + 3000)
+    
+    # Filter and return rows where underutilization exceeds the threshold
+    out = data[data['underutilized (Bytes)'] > threshold]
+    
+    return out
 
 def FindUnterutilizerSLURM(data, thresholds):
     """
@@ -40,7 +78,7 @@ def FindUnterutilizerSLURM(data, thresholds):
     """
 
     return None
-
+##
 def GroupUsersSLURM(data,k):
     """
     Groups users based on their utilization patterns of the HPCC
