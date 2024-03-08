@@ -23,7 +23,7 @@ def UsersWithManyFiles(data, file_limit):
         file_limit - integer resembling the file limit per user
     
     returns: 
-        users that are have a greater number of total files than the 
+        a dataframe of users that are have a greater number of total files than the 
         file limit.
 
     '''
@@ -36,7 +36,12 @@ def UsersWithManyFiles(data, file_limit):
     
     # Convert the filtered Series object to a DataFrame
     users_with_many_files_df = users_with_many_files.reset_index()
+    
     users_with_many_files_df.columns = ['UID numeric ID for the owner of the file', 'Number of files']
+    
+    
+    # Sort by 'Number of files' in descending order
+    users_with_many_files_df.sort_values('Number of files', ascending=False, inplace=True)
     
     return users_with_many_files_df
     
