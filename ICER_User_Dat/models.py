@@ -26,12 +26,19 @@ def UsersWithManyFiles(data, file_limit):
         users that are have a greater number of total files than the 
         file limit.
 
-        *Note: left column = UID, right column = # of files*
     '''
 
+    # Group by the user ID and count the number of files for each user
     file_count_per_user = data.groupby("UID numeric ID for the owner of the file").size()
-
-    return file_count_per_user[file_count_per_user.sort_values()>file_limit]
+    
+    # Filter users who have more files than the file_limit
+    users_with_many_files = file_count_per_user[file_count_per_user > file_limit]
+    
+    # Convert the filtered Series object to a DataFrame
+    users_with_many_files_df = users_with_many_files.reset_index()
+    users_with_many_files_df.columns = ['UID numeric ID for the owner of the file', 'Number of files']
+    
+    return users_with_many_files_df
     
 ##
 def FindUnterutilizerGPFS(data, threshold):
