@@ -158,25 +158,38 @@ def AggSLURMDat(dat):
         out_df - the aggregated version of the slurm dataset
     '''
     
-    job_list = dat["JobID"].value_counts().index
-
+    # initializing output dataframe
     out_df = pd.DataFrame(columns=dat.keys())
 
+    # creating list of unique job ids
+    job_list = dat["JobID"].value_counts().index
+
+    # iterating through each unique job id
     for job in job_list:
 
+        # filtering data for a given unique job
         jdat = dat[dat["JobID"] == job]
 
+        # creating list of unique CPU times
         cpu_time_list = jdat["CPUTimeRAW"].value_counts()
+        # doing some weird masking things to find .batch + agg job pairs
         cpu_time_list = cpu_time_list[cpu_time_list == 2].index
 
+        # iterating through each cpu time for a given job id
+        # should only run once unless the job is an array job
         for cpu_time in cpu_time_list:
-
+            
+            # masking data for a specific cpu time 
+            # this SHOULD isolate a batch+agg job pair
             ajob = jdat[jdat["CPUTimeRAW"] == cpu_time]
 
+            # if the job is user_258, should be the batch job
             batch_job = ajob[ajob["User"] == "user_258"]
 
+            # if there is a unique id, should be the agg job
             ag_job = ajob[ajob["User"] != "user_258"]
 
+            # some weird edge cases I found 
             if len(ag_job["User"]) == 0:
                 print("Weird Job",ajob["JobID"])
                 print("No aggregate job")
@@ -186,11 +199,14 @@ def AggSLURMDat(dat):
                 print("Weird Job",ajob["JobID"])
                 print("2 copies of aggregate job")
                 continue
-
+            
+            # checks for any more unique edge cases in the slurm data
             assert len(ag_job["User"]) == 1, "New edge case discovered!"
 
+            # appending MaxRSS data to agg job
             ag_job.loc[ag_job.index[0],"MaxRSS"] = batch_job["MaxRSS"].values[0]
 
+            # appending new row to output directory
             out_df = pd.concat([out_df,ag_job])
 
     return out_df
