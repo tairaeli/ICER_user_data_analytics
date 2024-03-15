@@ -91,6 +91,14 @@ def FindUnterutilizerSLURM(data, thresholds):
 
     return None
 ##
+
+
+def convert_to_minutes(td_str):
+    td = pd.Timedelta(td_str)
+    return td.total_seconds() / 60
+
+
+
 def GroupUsersSLURM(data,k):
     """
     Groups users based on their utilization patterns of the HPCC
@@ -107,11 +115,10 @@ def GroupUsersSLURM(data,k):
         
     """
     df=data
-    df["underutilizerCPUS"] = df['ReqCPUS']-df['AllocCPUS'] 
-    df["underutilizerNodes"] = df['ReqNodes']-df['NNodes']
+    df['Timelimit_']=df['Timelimit'].apply(convert_to_minutes)
     df['time_column']=pd.to_timedelta(df['Elapsed'])
     df['total_minutes']=df['time_column'].dt.total_seconds() / 60
-    features2=['CPUTimeRAW','ReqCPUS','AllocCPUS','ReqNodes','NNodes','underutilizerCPUS','underutilizerNodes','total_minutes']
+    features2=['CPUTimeRAW','ReqCPUS','AllocCPUS','ReqNodes','NNodes','Timelimit_','total_minutes','ReqMem_MB']
     df_pca=df[features2]
     scaler = StandardScaler()
     df_pca=scaler.fit_transform(df_pca)
@@ -126,9 +133,9 @@ def GroupUsersSLURM(data,k):
     plt.title('K-Means Clustering')
 
     cluster_counts = Counter(labels)
-    percentages = {cluster: count / 1000000 * 100 for cluster, count in cluster_counts.items()}
+    percentages = {cluster: count / len(df) * 100 for cluster, count in cluster_counts.items()}
     
-    percentages = {cluster: count / 1000000 * 100 for cluster, count in cluster_counts.items()}
+    percentages = {cluster: count / len(df) * 100 for cluster, count in cluster_counts.items()}
     
     table_data = pd.DataFrame(list(percentages.items()), columns=['Cluster Label', 'Percentage (%)'])
     
