@@ -11,4 +11,6 @@ conda activate data_sc
 
 cd /mnt/home/tairaeli/ICER_project/ICER_user_data_analytics/ICER_User_Dat/data_exploration
 
+echo "running cleaning script"
+
 python gen_clean_slurm_dat.py
