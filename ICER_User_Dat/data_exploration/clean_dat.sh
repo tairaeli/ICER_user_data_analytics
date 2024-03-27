@@ -5,7 +5,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=50G
-#SBATCH --job-name CleanData
+#SBATCH --job-name ValidatingCleanData
 
 conda activate data_sc
 
