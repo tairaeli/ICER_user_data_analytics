@@ -1,0 +1,10 @@
+# Ignore the entire data directory
+data/
+
+# ignore jupyter notebook folders
+.ipynbcheckpoint
+__pychache__
+
+# ignore .core for class package
+core.*
+
