@@ -6,3 +6,5 @@ data/
 __pychache__
 
 # ignore .core for class package
+core.*
+
