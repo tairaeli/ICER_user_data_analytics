@@ -16,6 +16,8 @@ class DataAnalyzer:
         self.gpfs_data = None
         self.slurm_data = None
         self.slurm_agg = None
+        
+        # printing each data file path
         print('gpfs path=',gpfspath)
         print('slurm path=',slurmpath)
         
@@ -36,11 +38,13 @@ class DataAnalyzer:
                         "Acces time in days from today",
                         "GID numeric ID for the group owner of the file",
                         "UID numeric ID for the owner of the file"]
+        # set gpfs_data to outputed pandas dataset
         self.gpfs_data = pd.read_csv(gpfspath, header=None, names=column_names, delimiter=' ', nrows=1e5)
         return self.gpfs_data
 
 
     def read_slurm(self, slurmpath):
+        # set slurm_data to outputed pandas dataset
         self.slurm_data = pd.read_csv(slurmpath, delimiter='|', nrows=1e3)
         return self.slurm_data
 
@@ -98,11 +102,12 @@ class DataAnalyzer:
                 ag_job.loc[ag_job.index[0],"MaxRSS"] = batch_job["MaxRSS"].values[0]
                 # appending new row to output directory
                 out_df = pd.concat([out_df,ag_job])
-            # initialize out_df to slurm_agg
+                
+            # set slurm_agg to outputed pandas aggregated slurm data
             self.slurm_agg = out_df
             return out_df
         
-        
+    # GPFS find users with many files method
     def UsersWithManyFiles(self, file_limit):
         '''
         Function to identify users with many files using a file limit 
@@ -135,7 +140,14 @@ class DataAnalyzer:
             
         print("ERROR: gpfs data was not defined")
         return None
-        
+
+    # slurm grouping users using KN-mean method
+
+    # slurm identify_slurm_resource_underutilization method
+
+    # slurm predict waltime method
+
+    # slurm plots methods:
         
 
 
