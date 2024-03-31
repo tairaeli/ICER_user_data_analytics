@@ -1,7 +1,7 @@
 #!/bin/bash --login
 
 #SBATCH --time=12:00:00
-#SBATCH --nodes=1
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=50G
@@ -13,4 +13,4 @@ cd /mnt/home/tairaeli/ICER_project/ICER_user_data_analytics/ICER_User_Dat/data_e
 
 echo "running cleaning script"
 
-python ./gen_clean_slurm_dat.py
+python ./slurm_dask_clean_job.py
