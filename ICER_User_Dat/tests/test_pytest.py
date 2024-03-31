@@ -1,25 +1,35 @@
-"""This file contains some basic tests. Modify to test your code"""
+"""Testing Script for all methods within the Data analysis object"""
 
-def test_imports():
-    """Really Simple test to ensure all package dependancies are installed properly"""
+# testing packages
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+from sklearn.cluster import KMeans
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+from collections import Counter
+import os
 
-    # Change list do reflect your package dependancies
-    import pytest
-    import math
-    
-    import mypackage
+os.chdir('../')
 
-def test_function():
-    """Test for the example function."""
-    from mypackage import example as ex
-    assert(ex.somefunction(1) == 1)
-    assert(ex.somefunction(0) == 1)
-    assert(ex.somefunction(2) == 4)
+# importing package
+from DataAnalyzer import DataAnalyzer
 
-def test_exception():
-    """Test to make sure function correctly returns an exception"""
-    from mypackage import example as ex
-    import pytest
-    with pytest.raises(Exception):
-        ex.somefunction("Hello world")
+# test initialization
+def test_init():
+    DataAnalyzer(None, None)
+
+# package loading
+def gpfs_load():
+    dat = DataAnalyzer(gpfs_load = "./test_gpfs.csv")
+
+def slurm_load():
+    dat = DataAnalyzer(gpfs_load = "./test_gpfs.csv")
+
+# function testing
+def user_files():
+    dat = DataAnalyzer(gpfs_load = "./test_gpfs.csv")
+
+    dat.UsersWithManyFiles(file_limit = 2)
 
