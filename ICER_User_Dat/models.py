@@ -91,6 +91,13 @@ def FindUnterutilizerSLURM(data, thresholds):
 
     return None
 ##
+
+
+def convert_to_minutes(td_str):
+    td = pd.Timedelta(td_str)
+    return td.total_seconds() / 60
+
+
 def GroupUsersSLURM(data,k):
     """
     Groups users based on their utilization patterns of the HPCC
@@ -112,6 +119,10 @@ def GroupUsersSLURM(data,k):
     df['time_column']=pd.to_timedelta(df['Elapsed'])
     df['total_minutes']=df['time_column'].dt.total_seconds() / 60
     features2=['CPUTimeRAW','ReqCPUS','AllocCPUS','ReqNodes','NNodes','underutilizerCPUS','underutilizerNodes','total_minutes']
+    df['Timelimit_']=df['Timelimit'].apply(convert_to_minutes)
+    df['time_column']=pd.to_timedelta(df['Elapsed'])
+    df['total_minutes']=df['time_column'].dt.total_seconds() / 60
+    features2=['CPUTimeRAW','ReqCPUS','AllocCPUS','ReqNodes','NNodes','Timelimit_','total_minutes','ReqMem_MB']
     df_pca=df[features2]
     scaler = StandardScaler()
     df_pca=scaler.fit_transform(df_pca)
@@ -126,9 +137,15 @@ def GroupUsersSLURM(data,k):
     plt.title('K-Means Clustering')
 
     cluster_counts = Counter(labels)
+
     percentages = {cluster: count / 1000000 * 100 for cluster, count in cluster_counts.items()}
     
     percentages = {cluster: count / 1000000 * 100 for cluster, count in cluster_counts.items()}
+
+    percentages = {cluster: count / len(df) * 100 for cluster, count in cluster_counts.items()}
+    
+    percentages = {cluster: count / len(df) * 100 for cluster, count in cluster_counts.items()}
+
     
     table_data = pd.DataFrame(list(percentages.items()), columns=['Cluster Label', 'Percentage (%)'])
     
@@ -158,6 +175,27 @@ def AggSLURMDat(dat):
         out_df - the aggregated version of the slurm dataset
     '''
     
+
+    job_list = dat["JobID"].value_counts().index
+
+    out_df = pd.DataFrame(columns=dat.keys())
+
+    for job in job_list:
+
+        jdat = dat[dat["JobID"] == job]
+
+        cpu_time_list = jdat["CPUTimeRAW"].value_counts()
+        cpu_time_list = cpu_time_list[cpu_time_list == 2].index
+
+        for cpu_time in cpu_time_list:
+
+            ajob = jdat[jdat["CPUTimeRAW"] == cpu_time]
+
+            batch_job = ajob[ajob["User"] == "user_258"]
+
+            ag_job = ajob[ajob["User"] != "user_258"]
+
+
     # initializing output dataframe
     out_df = pd.DataFrame(columns=dat.keys())
 
@@ -199,6 +237,12 @@ def AggSLURMDat(dat):
                 print("Weird Job",ajob["JobID"])
                 print("2 copies of aggregate job")
                 continue
+
+            assert len(ag_job["User"]) == 1, "New edge case discovered!"
+
+            ag_job.loc[ag_job.index[0],"MaxRSS"] = batch_job["MaxRSS"].values[0]
+
+
             
             # checks for any more unique edge cases in the slurm data
             assert len(ag_job["User"]) == 1, "New edge case discovered!"

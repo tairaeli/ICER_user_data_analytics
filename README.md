@@ -2,7 +2,11 @@
 
 ## Overview
 
+
+The Institute for Cyber Enabled Research (ICER) provides critical infrastructure for computational academic research, catering to various disciplines. Our project aims to delve into how users engage with ICER's systems, assessing usage efficiency and exploring avenues for optimization. By enhancing our understanding of user behaviors and system interactions, we can guide ICER in optimizing resource allocation, potentially leading to significant cost savings.
+
 The Institute for Cyber Enabled Research (ICER) in Michigan State University provides critical infrastructure for computational academic research, catering to various disciplines. Our project aims to delve into how users engage with ICER's systems, assessing usage efficiency and exploring avenues for optimization. By enhancing our understanding of user behaviors and system interactions, we can guide ICER in optimizing resource allocation, potentially leading to significant cost savings.
+>>>>>>> 15de672d4874ee2fe19bf7b2b98d7ede535cff7c
 
 ## Project Description
 
@@ -16,6 +20,9 @@ Project plan video: [Project Plan Video](https://michiganstate.sharepoint.com/:v
 - For detailed installation instructions, please see our [INSTALL.md](INSTALL.md) file.
 
 - For a step-by-step guide on how to use our software, please refer to our [demo.ipynb](demo.ipynb) file.
+  
+- For a step by step guide on how to produce our Waltime Prediction model, please refer to our [reproducibility](reproducibility) folder.
+
 
 ## Division of Labor
 
@@ -40,7 +47,21 @@ The team will initially focus on a few questions before branching out to address
 
 ## License
 
-This project is licensed under the MIT - see the LICENSE.md file for details.
+MIT License
+
+Copyright (c) 2024 Shams Alkhalidy,
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+ - see the LICENSE.md file for details.
 
 Acknowledgments
 
