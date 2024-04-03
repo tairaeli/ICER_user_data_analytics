@@ -82,17 +82,17 @@ class DataAnalyzer:
             if uid:
                 file_counts_per_user[uid] = file_counts_per_user.get(uid, 0) + 1
                 
-        # Sort and prepare for CDF plot
-        file_counts = list(file_counts_per_user.values())
-        file_counts.sort()
-        cumulative_counts = np.cumsum(file_counts)
-        cumulative_distribution = cumulative_counts / cumulative_counts[-1]
+        # # Sort and prepare for CDF plot
+        # file_counts = list(file_counts_per_user.values())
+        # file_counts.sort()
+        # cumulative_counts = np.cumsum(file_counts)
+        # cumulative_distribution = cumulative_counts / cumulative_counts[-1]
         
         # Plot
         plt.figure(figsize=(10, 6))
-        plt.plot(file_counts, cumulative_distribution, drawstyle='steps-post')
+        plt.ecdf(file_counts_per_user.values(), drawstyle='steps-post')
         plt.xlabel('Number of Files Owned by a User')
-        plt.ylabel('CDF')
+        plt.ylabel('Fraction of Total Data')
         plt.title('Cumulative Distribution of Files per User')
         plt.grid(True)
         plt.show()
