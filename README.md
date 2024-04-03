@@ -49,7 +49,7 @@ The team will initially focus on a few questions before branching out to address
 
 MIT License
 
-Copyright (c) 2024 Shams Alkhalidy,
+Copyright (c) 2024 Shams Alkhalidy,Luke Kozlowski, Wesley Casaletto, Elias Taira, Richard Arbury
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -70,7 +70,7 @@ All team members and contributors who have dedicated their time and expertise to
 
 Team Members & Contact Info:
 - Shams Al khalidy        alkhali7@msu.edu
-- Richard Arbury
-- Wesley Casaletto
-- Luke Kozlowski
-- Elias Taira
+- Richard Arbury          arburyri@msu.edu
+- Wesley Casaletto        casalet3@msu.edu
+- Luke Kozlowski          kozlow86@msu.edu
+- Elias Taira             tairaeli@msu.edu
