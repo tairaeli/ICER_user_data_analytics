@@ -46,7 +46,6 @@ class DataAnalyzer:
         self.gpfs_data = pd.read_csv(self.gpfspath, header=None, names=column_names, delimiter=' ', nrows=nrows)
         return self.gpfs_data
 
-
     def read_slurm(self, slurmpath, nrows):
         # set slurm_data to outputed pandas dataset
         self.slurm_data = pd.read_csv(slurmpath, delimiter='|', nrows=nrows)
