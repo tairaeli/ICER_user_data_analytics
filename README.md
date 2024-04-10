@@ -30,11 +30,12 @@ ICER_User_Dat is a melting pot of actively-used files by the team members.
 
 Data:
 
-  PreprocessingData-SLURM-GPFS.ipynb holds our data preprocessing code, which can be applied to future data.
-  gpfs_sample_data.csv and slurm_sample_data.csv have a small subset of data with our preprocessing process applied to it.
+  - PreprocessingData-SLURM-GPFS.ipynb holds our data preprocessing code, which can be applied to future data.
+  - gpfs_sample_data.csv and slurm_sample_data.csv have a small subset of data with our preprocessing process applied to it.
 
 Reproducability:
-  predict_walltime.ipynb is a reproducable result we've reached with regard to our predictive research question
+
+  - predict_walltime.ipynb is a reproducable result we've reached with regard to our predictive research question
 
 ## License
 
