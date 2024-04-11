@@ -1,11 +1,12 @@
 #!/bin/bash --login
 
+
 #SBATCH --time=12:00:00
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=50G
-#SBATCH --job-name ValidatingCleanData
+#SBATCH --job-name dask_once_more_again
 
 conda activate data_sc
 
