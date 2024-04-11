@@ -1,0 +1,17 @@
+name: user_dat_analysis
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - pdoc3
+  - pip
+  - pytest
+  - pydocstyle
+  - pylint
+  - notebook
+  - numpy>=1.26.3
+  - scikit-learn>=1.3.0
+  - matplotlib>=3.8.0
+  - pandas>=2.1.4
+  - seaborn>=0.12.2
+

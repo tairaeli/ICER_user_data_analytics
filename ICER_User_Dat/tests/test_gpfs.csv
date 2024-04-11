@@ -1,0 +1,4 @@
+,Inode (file unique ID),KB Allocated,File Size,Creation Time in days from today,Change Time in days from today,Modification time in days from today,Acces time in days from today,GID numeric ID for the group owner of the file,UID numeric ID for the owner of the file
+0,100663296,0,8,1447,1447,3131,1447,2035,762231
+1,100663297,0,188,1447,1447,1937,1447,2010,614955
+2,100663301,0,567,1447,1447,3142,1447,2035,762231
