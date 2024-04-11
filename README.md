@@ -2,7 +2,11 @@
 
 ## Overview
 
+
+The Institute for Cyber Enabled Research (ICER) provides critical infrastructure for computational academic research, catering to various disciplines. Our project aims to delve into how users engage with ICER's systems, assessing usage efficiency and exploring avenues for optimization. By enhancing our understanding of user behaviors and system interactions, we can guide ICER in optimizing resource allocation, potentially leading to significant cost savings.
+
 The Institute for Cyber Enabled Research (ICER) in Michigan State University provides critical infrastructure for computational academic research, catering to various disciplines. Our project aims to delve into how users engage with ICER's systems, assessing usage efficiency and exploring avenues for optimization. By enhancing our understanding of user behaviors and system interactions, we can guide ICER in optimizing resource allocation, potentially leading to significant cost savings.
+
 
 ## Project Description
 
@@ -19,30 +23,37 @@ Project plan video: [Project Plan Video](https://michiganstate.sharepoint.com/:v
   
 - For a step by step guide on how to produce our Waltime Prediction model, please refer to our [reproducibility](reproducibility) folder.
 
-## Division of Labor
 
-Our team is divided to tackle multiple research questions simultaneously, ensuring efficient project progression. The prioritization of these questions is dynamic and may evolve as the project advances. Key research areas include:
+## Individual File Explanation
 
-Predicting resource underutilization/overutilization by users.
+ICER_User_Dat is a melting pot of actively-used files by the team members.
 
-Categorizing users based on system usage patterns.
+Data:
 
-Analyzing job queue times and influential factors.
+  - PreprocessingData-SLURM-GPFS.ipynb holds our data preprocessing code, which can be applied to future data.
+  - gpfs_sample_data.csv and slurm_sample_data.csv have a small subset of data with our preprocessing process applied to it.
 
-Identifying outliers in data utilization.
+Reproducability:
 
-Assessing resource subscription levels.
-
-Evaluating resource underutilization in job executions.
-
-Investigating user utilization patterns in relation to academic calendars.
-
-The team will initially focus on a few questions before branching out to address others concurrently. This approach allows for adaptability and deeper insights as we familiarize ourselves with the data.
-
+  - predict_walltime.ipynb is a reproducable result we've reached with regard to our predictive research question
 
 ## License
 
-This project is licensed under the MIT - see the LICENSE.md file for details.
+MIT License
+
+Copyright (c) 2024 Shams Alkhalidy,Luke Kozlowski, Wesley Casaletto, Elias Taira, Richard Arbury
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+ - see the LICENSE.md file for details.
 
 Acknowledgments
 
@@ -51,7 +62,7 @@ All team members and contributors who have dedicated their time and expertise to
 
 Team Members & Contact Info:
 - Shams Al khalidy        alkhali7@msu.edu
-- Richard Arbury
-- Wesley Casaletto
-- Luke Kozlowski
-- Elias Taira
+- Richard Arbury          arburyri@msu.edu
+- Wesley Casaletto        casalet3@msu.edu
+- Luke Kozlowski          kozlow86@msu.edu
+- Elias Taira             tairaeli@msu.edu

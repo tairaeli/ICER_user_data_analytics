@@ -1,7 +1,8 @@
 #!/bin/bash --login
 
-#SBATCH --time=24:00:00
-#SBATCH --nodes=1
+
+#SBATCH --time=12:00:00
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=50G
