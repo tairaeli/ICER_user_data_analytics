@@ -20,11 +20,10 @@ Project plan video: [Project Plan Video](https://michiganstate.sharepoint.com/:v
 - For detailed installation instructions, please see our [INSTALL.md](INSTALL.md) file.
 
 - For a step-by-step guide on how to use our software, please refer to our [demo.ipynb](demo.ipynb) file.
-<<<<<<< HEAD
-=======
+
   
 - For a step by step guide on how to produce our Waltime Prediction model, please refer to our [reproducibility](reproducibility) folder.
->>>>>>> 15de672d4874ee2fe19bf7b2b98d7ede535cff7c
+
 
 ## Division of Labor
 
