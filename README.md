@@ -41,7 +41,31 @@ Data:
 
 Reproducability:
 
-  - predict_walltime.ipynb is a reproducable result we've reached with regard to our predictive research question
+  - predict_walltime.ipynb is a reproducable result we've reached with regard to our predictive research question.
+
+.gitignore:
+
+  - Specifies things for github to not track, in our case is just jupyter notebook checkpoints and the data preprocessing directory.
+
+ICER_package_demo.ipynb:
+
+  - A demo of our analysis package in action, aggregating the data and identifying users with many files.
+
+INSTALL.md:
+
+  - Installation instructions for running our project.
+
+LICENSE.txt:
+
+  - Legal terms for using the work we did in the project.
+
+environment.yml:
+
+  - A file you can run to automatically install all the prerequisite packages for our project's code.
+
+makefile:
+
+  - the makefile for our project gives the command line instructions for setup.
 
 ## License
 
