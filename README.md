@@ -32,7 +32,10 @@ Project plan video: [Project Plan Video](https://michiganstate.sharepoint.com/:v
 
 ## Individual File Explanation
 
-ICER_User_Dat is a melting pot of actively-used files by the team members.
+ICER_User_Dat:
+
+  - DataAnalyzer.py is a class that houses all of our analysis functions.
+  - models.py has the models for clusering users, identifying users with many files, and others.
 
 Data:
 
