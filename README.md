@@ -14,6 +14,12 @@ Leveraging the SLURM job database and GPFS file metadata, this project focuses o
 
 Project plan video: [Project Plan Video](https://michiganstate.sharepoint.com/:v:/s/Section_SS24-CMSE-495-001-224214134-EL-32-A26-ICER/Efp8_UgZhPlOmn8TDa3YKNEB73NHpUl5yw95KQl-N27r3A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=MrIMiT)
 
+### Research Questions
+1. **Resource Utilization Patterns**: Can we identify which users are underutilizing or overutilizing system resources? 
+
+2. **User Categorization and Prediction**: Can we classify users based on their system usage, including computing and disk usage, and monitor their resource utilization? 
+
+3. **Queue Time Analysis**: Can we forecast the queue time for submitted jobs and identify key factors influencing this time? 
 
 ## Files
 
