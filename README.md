@@ -34,13 +34,8 @@ Project plan video: [Project Plan Video](https://michiganstate.sharepoint.com/:v
 
 ICER_User_Dat:
 
+ICER_package:
   - DataAnalyzer.py is a class that houses all of our analysis functions.
-  - models.py has the models for clusering users, identifying users with many files, and others.
-
-Data:
-
-  - PreprocessingData-SLURM-GPFS.ipynb holds our data preprocessing code, which can be applied to future data.
-  - gpfs_sample_data.csv and slurm_sample_data.csv have a small subset of data with our preprocessing process applied to it.
 
 Reproducability:
 
