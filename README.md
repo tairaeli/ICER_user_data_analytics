@@ -5,9 +5,6 @@
 
 The Institute for Cyber Enabled Research (ICER) provides critical infrastructure for computational academic research, catering to various disciplines. Our project aims to delve into how users engage with ICER's systems, assessing usage efficiency and exploring avenues for optimization. By enhancing our understanding of user behaviors and system interactions, we can guide ICER in optimizing resource allocation, potentially leading to significant cost savings.
 
-The Institute for Cyber Enabled Research (ICER) in Michigan State University provides critical infrastructure for computational academic research, catering to various disciplines. Our project aims to delve into how users engage with ICER's systems, assessing usage efficiency and exploring avenues for optimization. By enhancing our understanding of user behaviors and system interactions, we can guide ICER in optimizing resource allocation, potentially leading to significant cost savings.
-
-
 ## Project Description
 
 Leveraging the SLURM job database and GPFS file metadata, this project focuses on developing classification systems to categorize user workloads and disk utilization patterns. Employing unsupervised learning methods, we aim to analyze extensive datasets, thereby refining resource usage statistics and creating tools for system improvement. Our objectives include grouping similar users, identifying underutilization of resources, and predicting job queue times, among others.
@@ -25,7 +22,7 @@ Project plan video: [Project Plan Video](https://michiganstate.sharepoint.com/:v
 
 - For detailed installation instructions, please see our [INSTALL.md](INSTALL.md) file.
 
-- For a step-by-step guide on how to use our software, please refer to our [demo.ipynb](demo.ipynb) file.
+- For a step-by-step guide on how to use our software, please refer to our [ICER_package_demo.ipynb](ICER_package_demo.ipynb) file.
   
 - For a step by step guide on how to produce our Waltime Prediction model, please refer to our [reproducibility](reproducibility) folder.
 
@@ -34,25 +31,22 @@ Project plan video: [Project Plan Video](https://michiganstate.sharepoint.com/:v
 
 ICER_User_Dat:
 
+ICER_package:
   - DataAnalyzer.py is a class that houses all of our analysis functions.
-  - models.py has the models for clusering users, identifying users with many files, and others.
-
-Data:
-
-  - PreprocessingData-SLURM-GPFS.ipynb holds our data preprocessing code, which can be applied to future data.
-  - gpfs_sample_data.csv and slurm_sample_data.csv have a small subset of data with our preprocessing process applied to it.
-
-Reproducability:
-
-  - predict_walltime.ipynb is a reproducable result we've reached with regard to our predictive research question.
-
-.gitignore:
-
-  - Specifies things for github to not track, in our case is just jupyter notebook checkpoints and the data preprocessing directory.
-
+    
 ICER_package_demo.ipynb:
 
   - A demo of our analysis package in action, aggregating the data and identifying users with many files.
+
+Reproducability:
+
+  - [RQ1/FilesPerUser](reproducibility/RQ1/FilesPerUser) directory includes the job script file, python script file, log scaled Files Per User CDF plot, regular scaled Files Per User CDF plot, and a python notebook on a subset of the data for reproducibility with regard to plotting File Distribution in the GPFS system.
+  - [RQ1/UsersWithManyFIlesGPFS.ipynb](reproducibility/RQ1/UsersWithManyFIlesGPFS.ipynb) is a reproducible function we've created to identify users in the GPFS system with many files based on a given threshold.
+  - [RQ3/RQ3-Predicting_Queutime.ipynb]([reproducibility/RQ3/RQ3-Predicting_Queutime.ipynb]) is a reproducable result we've reached with regard to our predictive research question.
+  - 
+
+.gitignore:
+  - Specifies things for github to not track, in our case is just jupyter notebook checkpoints and the data preprocessing directory.
 
 INSTALL.md:
 
@@ -88,12 +82,12 @@ copies or substantial portions of the Software.
 
  - see the LICENSE.md file for details.
 
-Acknowledgments
+**Acknowledgments**
 
 ICER for providing the infrastructure and datasets for this research.
 All team members and contributors who have dedicated their time and expertise to this project.
 
-Team Members & Contact Info:
+**Team Members & Contact Info:**
 - Shams Al khalidy        alkhali7@msu.edu
 - Richard Arbury          arburyri@msu.edu
 - Wesley Casaletto        casalet3@msu.edu
