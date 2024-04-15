@@ -25,7 +25,7 @@ Project plan video: [Project Plan Video](https://michiganstate.sharepoint.com/:v
 
 - For detailed installation instructions, please see our [INSTALL.md](INSTALL.md) file.
 
-- For a step-by-step guide on how to use our software, please refer to our [demo.ipynb](demo.ipynb) file.
+- For a step-by-step guide on how to use our software, please refer to our [ICER_package_demo.ipynb](ICER_package_demo.ipynb) file.
   
 - For a step by step guide on how to produce our Waltime Prediction model, please refer to our [reproducibility](reproducibility) folder.
 
