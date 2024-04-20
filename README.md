@@ -31,9 +31,6 @@ Leveraging the SLURM job database and GPFS file metadata, this project focuses o
 
 ## Individual File Explanation
 
-ICER_User_Dat:
-  - [data_exploration](ICER_User_Dat/data_exploration) directory includes the notebooks, python, and sh files used used to explore, test and load the full slurm data file through different packages and methods.
-
 ICER_package:
   - [DataAnalyzer.py](ICER_package/DataAnalyzer.py) is the file that includes the class that houses all of our analysis functions.
   - [tests](ICER_package/tests) directory includes 3 files for testing ICER_package and are the following:
@@ -46,7 +43,7 @@ ICER_package_demo.ipynb:
   - [ICER_package_demo](ICER_package_demo.ipynb) : a demo of our methods in the analysis package in action.
 
 Reproducability:
-
+  - [data_exploration](ICER_User_Dat/data_exploration) directory includes the notebooks, python, and sh files used used to explore, test and load the full slurm data file through different packages and methods.
   - [RQ1/FilesPerUser](reproducibility/RQ1/FilesPerUser) directory includes the job script file, python script file, log scaled Files Per User CDF plot, regular scaled Files Per User CDF plot, and a python notebook on a subset of the data for reproducibility with regard to plotting File Distribution in the GPFS system.
   - [RQ1/UsersWithManyFIlesGPFS.ipynb](reproducibility/RQ1/UsersWithManyFIlesGPFS.ipynb) is a reproducible function we've created to identify users in the GPFS system with many files based on a given threshold.
   - [RQ3/RQ3-Predicting_Queutime.ipynb]([reproducibility/RQ3/RQ3-Predicting_Queutime.ipynb]) is a reproducable result we've reached with regard to our predictive research question.
