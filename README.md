@@ -9,7 +9,9 @@ The Institute for Cyber Enabled Research (ICER) provides critical infrastructure
 
 Leveraging the SLURM job database and GPFS file metadata, this project focuses on developing classification systems to categorize user workloads and disk utilization patterns. Employing unsupervised learning methods, we aim to analyze extensive datasets, thereby refining resource usage statistics and creating tools for system improvement. Our objectives include grouping similar users, identifying underutilization of resources, and predicting job queue times, among others.
 
-Project plan video: [Project Plan Video](https://michiganstate.sharepoint.com/:v:/s/Section_SS24-CMSE-495-001-224214134-EL-32-A26-ICER/Efp8_UgZhPlOmn8TDa3YKNEB73NHpUl5yw95KQl-N27r3A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=MrIMiT)
+- Project plan video: [Project Plan Video](https://michiganstate.sharepoint.com/:v:/s/Section_SS24-CMSE-495-001-224214134-EL-32-A26-ICER/Efp8_UgZhPlOmn8TDa3YKNEB73NHpUl5yw95KQl-N27r3A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=MrIMiT)
+
+- Final Project MVP: [Final Project Video](https://michiganstate.sharepoint.com/:v:/r/sites/Section_SS24-CMSE-495-001-224214134-EL-32-A26-ICER/Shared%20Documents/ICER/project_deliverables/Video_Final_Project.mp4?csf=1&web=1&e=e3NKGu&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ### Research Questions
 1. **Resource Utilization Patterns**: Can we identify which users are underutilizing or overutilizing system resources? 
@@ -30,13 +32,14 @@ Project plan video: [Project Plan Video](https://michiganstate.sharepoint.com/:v
 ## Individual File Explanation
 
 ICER_User_Dat:
+  - [data_exploration](ICER_User_Dat/data_exploration) directory includes the notebooks, python, and sh files used used to explore, test and load the full slurm data file through different packages and methods.
 
 ICER_package:
-  - DataAnalyzer.py is a class that houses all of our analysis functions.
+  - [DataAnalyzer.py](ICER_package/DataAnalyzer.py) is the file that includes the class that houses all of our analysis functions.
     
 ICER_package_demo.ipynb:
 
-  - A demo of our analysis package in action, aggregating the data and identifying users with many files.
+  - [ICER_package_demo](ICER_package_demo.ipynb) : a demo of our analysis package in action, aggregating the data and identifying users with many files.
 
 Reproducability:
 
