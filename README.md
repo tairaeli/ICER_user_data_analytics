@@ -36,10 +36,14 @@ ICER_User_Dat:
 
 ICER_package:
   - [DataAnalyzer.py](ICER_package/DataAnalyzer.py) is the file that includes the class that houses all of our analysis functions.
+  - [tests](ICER_package/tests) directory includes 3 files for testing ICER_package and are the following:
+    1. [test_gpfs.csv](ICER_package/tests/test_gpfs.csv) file includes a subset of GPFS data
+    2. [test_slurm.csv](ICER_package/tests/test_slurm.csv) file includes a subset of slurm data
+    3. [test_pytest.py](ICER_package/tests/test_pytest.py) file is a python script that can be ran to test ICER_pacakge directly.
     
 ICER_package_demo.ipynb:
 
-  - [ICER_package_demo](ICER_package_demo.ipynb) : a demo of our analysis package in action, aggregating the data and identifying users with many files.
+  - [ICER_package_demo](ICER_package_demo.ipynb) : a demo of our methods in the analysis package in action.
 
 Reproducability:
 
