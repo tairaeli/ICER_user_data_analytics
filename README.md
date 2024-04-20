@@ -37,8 +37,8 @@ ICER_User_Dat:
 ICER_package:
   - [DataAnalyzer.py](ICER_package/DataAnalyzer.py) is the file that includes the class that houses all of our analysis functions.
   - [tests](ICER_package/tests) directory includes 3 files for testing ICER_package and are the following:
-    1. [test_gpfs.csv](ICER_package/tests/test_gpfs.csv) file includes a subset of GPFS data
-    2. [test_slurm.csv](ICER_package/tests/test_slurm.csv) file includes a subset of slurm data
+    1. [test_gpfs.csv](ICER_package/tests/test_gpfs.csv) file includes 3 rows of fake GPFS data
+    2. [test_slurm.csv](ICER_package/tests/test_slurm.csv) file includes 3 rows of fake slurm data
     3. [test_pytest.py](ICER_package/tests/test_pytest.py) file is a python script that can be ran to test ICER_pacakge directly.
     
 ICER_package_demo.ipynb:
@@ -50,7 +50,7 @@ Reproducability:
   - [RQ1/FilesPerUser](reproducibility/RQ1/FilesPerUser) directory includes the job script file, python script file, log scaled Files Per User CDF plot, regular scaled Files Per User CDF plot, and a python notebook on a subset of the data for reproducibility with regard to plotting File Distribution in the GPFS system.
   - [RQ1/UsersWithManyFIlesGPFS.ipynb](reproducibility/RQ1/UsersWithManyFIlesGPFS.ipynb) is a reproducible function we've created to identify users in the GPFS system with many files based on a given threshold.
   - [RQ3/RQ3-Predicting_Queutime.ipynb]([reproducibility/RQ3/RQ3-Predicting_Queutime.ipynb]) is a reproducable result we've reached with regard to our predictive research question.
-  - 
+
 
 .gitignore:
   - Specifies things for github to not track, in our case is just jupyter notebook checkpoints and the data preprocessing directory.
