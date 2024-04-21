@@ -307,7 +307,31 @@ class DataAnalyzer:
                               'MaxRSS_MB','Elapsed', 'FractionalUnderutilizedCPU', 'FractionalUnderutilizedNodes', 
                               'FractionalUnderutilizedMemory', 'FractionalUnderutilizedTime']]
 
+    def CalculateUtilization(self):
+        """
+        Runs through each requested resource (time, CPU, nodes, memory) and determines the fraction of
+        requested resources that they actually used
 
+        Parameters:
+        :param data: DataFrame with SLURM job records.
+        
+        Returns:
+        DataFrame with columns for 'User', 'JobID', 'Group', 'State', 'Account', and utilization fractions.
+        """
+        
+        data = self.slurm_data
+
+        # Calculate underutilized resources
+        data['UtilizeCPUFrac'] = data.ReqCPUS/data.AllocCPUS    
+        data['UtilizeNodesFrac'] = data.ReqNodes/data.NNodes  
+        data['UtilizeTimeFrac'] = data['Elapsed'] / data['Timelimit']   
+        data['UtilizeMemoryFrac'] = data['MaxRSS_MB'] / data['ReqMem_MB']
+        
+        return data[['User', 'JobID', 'Group', 'State', 'Account', 
+                            'Timelimit', 'UtilizeTimeFrac', 
+                            'ReqCPUS','UtilizeCPUFrac','ReqNodes', 
+                            'UtilizeNodesFrac', 'ReqMem_MB', 
+                            'UtilizeMemoryFrac']]
     # slurm grouping users using KN-mean method
 
     # slurm plots methods:
