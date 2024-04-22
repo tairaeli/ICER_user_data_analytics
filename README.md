@@ -46,6 +46,18 @@ Reproducability:
   - [data_exploration](ICER_User_Dat/data_exploration) directory includes the notebooks, python, and sh files used used to explore, test and load the full slurm data file through different packages and methods.
   - [RQ1/FilesPerUser](reproducibility/RQ1/FilesPerUser) directory includes the job script file, python script file, log scaled Files Per User CDF plot, regular scaled Files Per User CDF plot, and a python notebook on a subset of the data for reproducibility with regard to plotting File Distribution in the GPFS system.
   - [RQ1/UsersWithManyFIlesGPFS.ipynb](reproducibility/RQ1/UsersWithManyFIlesGPFS.ipynb) is a reproducible function we've created to identify users in the GPFS system with many files based on a given threshold.
+  - [RQ2/K-MeansClusterFinal](reproducibility/RQ2/K-MeansClusterFinal.ipynb)
+Notebook takes data after preprocessing and isolates numeric features of the data set. It then using various Python packages, namely Skicit-Learn, it perform Principal Component analysis to reduce the dimensions of the SLURM data to dimensions of 2 and 3 and, performs and graphs KMeans clusters each respective dimension. Also performs a Decision Classification Tree to classify newly found Cluster labels. This helps show feature impact on each clusters label classification.
+
+  - [RQ2/BIRCHCluster](reproducibility/RQ2/BIRCHCluster.ipynb)
+Notebook takes data after preprocessing and isolates numeric features of the data set. It then using various Python packages, namely Skicit-Learn, it perform Principal Component analysis to reduce the dimensions of the SLURM data to dimensions of 2 and 3, performs and graphs BIRCH clusters to each respective dimension 
+
+  - [RQ2/PCA_ElbowCurve Final](reproducibility/RQ2/PCA_ElbowCurve Final.ipyb) 
+Notebook takes data after preprocessing and isolates numeric features of the data set. It then using various Python packages, namely Skicit-Learn, it perform Principal Component analysis to reduce the dimensions of the SLURM data to dimensions. It then shows the explained variance of each Principle Component, the effect each of the original features had on each principle component and their normalized values. The notebook then uses the 3-dimensional data and initializes 14 k-means models. Each model has a different cluster value, each models inertia metric found. A plot of inertia vs. clusters is shown, which is used to pick final k-means cluster
+
+- [RQ2/Sample Statistic Richie](reproducibility/RQ2/Sample Statistic Richie.ipyb) 
+Notebook takes data after preprocessing and isolates numeric features of the data set. It then finds and plots the CDFs of each numeric data feature. Also contains charts using “Group” feature of the data to show distribution of resources among unique groups in the SLURM data frame, as well as the the amount of time each group shows up in the data frame
+
   - [RQ3/RQ3-Predicting_Queutime.ipynb]([reproducibility/RQ3/RQ3-Predicting_Queutime.ipynb]) is a reproducable result we've reached with regard to our predictive research question.
 
 
