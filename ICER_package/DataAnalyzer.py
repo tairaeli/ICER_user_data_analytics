@@ -332,12 +332,6 @@ class DataAnalyzer:
                             'ReqCPUS','UtilizeCPUFrac','ReqNodes', 
                             'UtilizeNodesFrac', 'ReqMem_MB', 
                             'UtilizeMemoryFrac']]
-    # slurm grouping users using KN-mean method
 
-    # slurm plots methods:
-        # cdf plot
-
-        # Heatmap
-        
 
 
