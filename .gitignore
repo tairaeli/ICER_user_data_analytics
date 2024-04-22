@@ -3,6 +3,7 @@ data/
 
 # ignore jupyter notebook folders
 .ipynbcheckpoint
+.ipynbcheckpoints
 __pychache__
 
 # ignore .core for class package
