@@ -202,7 +202,7 @@ class DataAnalyzer:
 
 
     # slurm predict waltime method
-    def predict_waltime(self):
+    def predict_quetime(self):
         '''
         This method uses a Random Forest Model to predict Queuetime in Minutes
         params:
